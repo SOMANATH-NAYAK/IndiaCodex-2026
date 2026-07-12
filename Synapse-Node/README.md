@@ -26,13 +26,10 @@ Today's healthcare system is fragmented:
 # 5. Project Demo Photos, Videos
 *(Please insert your demo photos and YouTube/video links here)*
 
-# 6. Live Project Link
-*(If your project is deployed, insert the URL here)*
+# 6. Your PPT link
+*https://gamma.app/docs/MediChain-DAO-jne321iz5prwb1c*
 
-# 7. Your PPT link
-*(Please insert the link to your PPT here. Ensure the PPT file is also uploaded in this folder)*
-
-# 8. Your Team Members' Info
+# 7. Your Team Members' Info
 - **Team Name:** Synapse-Node
-- **Members:** 
+- **Leader:** 
   - Somanath Nayak - Solo Hacker - https://www.linkedin.com/in/somanath-nayak/
