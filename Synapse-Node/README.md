@@ -24,7 +24,20 @@ Today's healthcare system is fragmented:
 - **Styling:** Tailwind CSS (Brutalist Web3 Design System)
 
 # 5. Project Demo Photos, Videos
-*(Please insert your demo photos and YouTube/video links here)*
+Here are the screenshots demonstrating the MediChain DAO system:
+
+### 1. Dashboard & Access Request Flow
+![Dashboard & Access Request](./Demo%20Images/Screenshot%202026-07-12%20172739.png)
+
+### 2. Patient Dashboard & Ephemeral Consent Panel
+![Patient Dashboard](./Demo%20Images/Screenshot%202026-07-12%20172843.png)
+
+### 3. Smart Contract & Cryptographic Consent Verification via Lace Wallet
+![Wallet & Consent Verification](./Demo%20Images/Screenshot%202026-07-12%20173003.png)
+
+### 4. Masumi AI Diagnostic Agent Reports & Zero-Knowledge Verification
+![AI Diagnostics & ZK-Proofs](./Demo%20Images/Screenshot%202026-07-12%20173110.png)
+
 
 # 6. Your PPT link
 *https://gamma.app/docs/MediChain-DAO-jne321iz5prwb1c*
