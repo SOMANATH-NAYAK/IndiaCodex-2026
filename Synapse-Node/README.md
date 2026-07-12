@@ -45,10 +45,10 @@ Here are the screenshots demonstrating the MediChain DAO system:
 ![AI Diagnostics & ZK-Proofs](./Demo%20Images/Screenshot%202026-07-12%20173110.png)
 
 
-# 6. Your PPT link
+# 6. PPT link
 *https://gamma.app/docs/MediChain-DAO-jne321iz5prwb1c*
 
-# 7. Your Team Members' Info
+# 7. Team Members' Info
 - **Team Name:** Synapse-Node
 - **Leader:** 
   - Somanath Nayak - Solo Hacker - https://www.linkedin.com/in/somanath-nayak/
