@@ -24,6 +24,12 @@ Today's healthcare system is fragmented:
 - **Styling:** Tailwind CSS (Brutalist Web3 Design System)
 
 # 5. Project Demo Photos, Videos
+### 🎥 Demo Video
+[![MediChain DAO Demo Video](https://img.youtube.com/vi/A7n0GY3ACcU/0.jpg)](https://youtu.be/A7n0GY3ACcU?si=RcKLum0jBPOGxmjv)
+
+Watch the complete walkthrough video on [YouTube](https://youtu.be/A7n0GY3ACcU?si=RcKLum0jBPOGxmjv).
+
+### 📸 Screenshots
 Here are the screenshots demonstrating the MediChain DAO system:
 
 ### 1. Dashboard & Access Request Flow
