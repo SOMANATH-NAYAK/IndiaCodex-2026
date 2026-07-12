@@ -5,7 +5,6 @@ import { Brain, AlertTriangle, Lightbulb, ChevronRight, Activity } from "lucide-
 import LoadingSpinner from "@/components/LoadingSpinner";
 
 interface MasumiAgentProps {
-  recordName: string;
   recordId: string;
 }
 
@@ -57,7 +56,7 @@ const DEFAULT_FINDING = {
 
 type AgentState = "idle" | "loading" | "done";
 
-export default function MasumiAgent({ recordName, recordId }: MasumiAgentProps) {
+export default function MasumiAgent({ recordId }: MasumiAgentProps) {
   const [state, setState] = useState<AgentState>("idle");
   const [runCount, setRunCount] = useState(0);
 

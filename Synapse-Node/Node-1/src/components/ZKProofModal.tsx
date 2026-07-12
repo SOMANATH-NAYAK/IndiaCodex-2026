@@ -144,7 +144,7 @@ export default function ZKProofModal({ record, onClose }: ZKProofModalProps) {
           <div className="flex items-start gap-2 p-3 bg-blue-50 border-2 border-black">
             <ShieldCheck className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2.5} />
             <p className="text-[11px] font-semibold text-black leading-snug">
-              This proof is generated <span className="font-black">locally</span> using Midnight Network's ZK circuits. No raw health data ever leaves your wallet.
+              This proof is generated <span className="font-black">locally</span> using Midnight Network&apos;s ZK circuits. No raw health data ever leaves your wallet.
             </p>
           </div>
 

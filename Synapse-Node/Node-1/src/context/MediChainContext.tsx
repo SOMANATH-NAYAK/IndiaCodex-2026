@@ -257,6 +257,7 @@ export function MediChainProvider({ children }: { children: ReactNode }) {
   );
 
   const searchPatient = useCallback(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     (address: string) => {
       // In production, this would query the blockchain with the address
       setPatientSearched(true);
