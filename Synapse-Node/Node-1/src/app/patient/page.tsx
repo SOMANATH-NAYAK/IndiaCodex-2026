@@ -16,6 +16,7 @@ import {
   Vote,
   Users,
   TrendingUp,
+  Clock,
 } from "lucide-react";
 
 export default function PatientDashboard() {
@@ -135,6 +136,24 @@ export default function PatientDashboard() {
                         Requesting access to{" "}
                         <span className="font-black text-black">{req.recordName}</span>
                       </p>
+
+                      {/* ── USP 3: Ephemeral "Time-Bombed" Consent ── */}
+                      <div className="mb-4 p-3 border-2 border-black bg-gray-50">
+                        <p className="text-[10px] font-black text-black uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                          <Clock className="w-3.5 h-3.5 text-red-600" strokeWidth={3} />
+                          Access Duration
+                        </p>
+                        <div className="flex gap-2">
+                          {["1 Hour", "24 Hours", "7 Days"].map((dur, i) => (
+                            <label key={dur} className="flex-1 cursor-pointer">
+                              <input type="radio" name={`duration-${req.id}`} className="peer sr-only" defaultChecked={i === 1} />
+                              <div className="text-center py-1.5 px-1 border-2 border-black bg-white text-[10px] font-black uppercase text-gray-400 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-black transition-colors">
+                                {dur}
+                              </div>
+                            </label>
+                          ))}
+                        </div>
+                      </div>
 
                       <div className="flex gap-2">
                         <button

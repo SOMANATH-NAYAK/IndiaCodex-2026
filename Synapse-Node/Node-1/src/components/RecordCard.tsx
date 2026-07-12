@@ -1,6 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { MedicalRecord } from "@/data/mockData";
+import ZKProofModal from "./ZKProofModal";
 import {
   FileText,
   Syringe,
@@ -11,6 +13,7 @@ import {
   Lock,
   Unlock,
   Clock,
+  ShieldCheck,
 } from "lucide-react";
 
 const typeIconMap = {
@@ -46,6 +49,7 @@ export default function RecordCard({
   onViewContent,
   isRequesting,
 }: RecordCardProps) {
+  const [showZkModal, setShowZkModal] = useState(false);
   const Icon = typeIconMap[record.type];
   const colorClass = typeColorMap[record.type];
 
@@ -139,7 +143,24 @@ export default function RecordCard({
             ⏳ {record.requestedBy} has requested access
           </div>
         )}
+
+        {/* ── USP 2: Midnight ZK-Proof Generator ── */}
+        {variant === "patient" && (
+          <div className="mt-3 pt-3 border-t-2 border-dashed border-gray-300">
+            <button
+              onClick={() => setShowZkModal(true)}
+              className="w-full py-2 px-3 bg-white border-2 border-black text-black text-xs font-black uppercase tracking-wider hover:bg-yellow-400 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-1px] hover:translate-y-[-1px] active:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] active:translate-x-[1px] active:translate-y-[1px] transition-all flex items-center justify-center gap-2"
+            >
+              <ShieldCheck className="w-4 h-4" strokeWidth={2.5} />
+              Generate ZK-Proof
+            </button>
+          </div>
+        )}
       </div>
+
+      {showZkModal && (
+        <ZKProofModal record={record} onClose={() => setShowZkModal(false)} />
+      )}
     </div>
   );
 }

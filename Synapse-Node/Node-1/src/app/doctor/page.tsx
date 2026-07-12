@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useMediChain } from "@/context/MediChainContext";
 import RecordCard from "@/components/RecordCard";
 import LoadingSpinner from "@/components/LoadingSpinner";
+import MasumiAgent from "@/components/MasumiAgent";
 import {
   Search,
   Stethoscope,
@@ -16,8 +17,8 @@ import {
   Wallet,
   Copy,
   CheckCheck,
+  Clock,
 } from "lucide-react";
-
 
 export default function DoctorDashboard() {
   const {
@@ -196,7 +197,7 @@ export default function DoctorDashboard() {
           </>
         )}
 
-        {/* ━━━ Unlocked Records Viewer ━━━ */}
+        {/* ━━━ Unlocked Records Viewer — with Masumi Agent + Time-Bomb Badge ━━━ */}
         {unlockedRecords.length > 0 && patientSearched && (
           <div className="mt-8">
             <div className="flex items-center gap-2 mb-4">
@@ -213,26 +214,40 @@ export default function DoctorDashboard() {
                   key={record.id}
                   className="border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
                 >
+                  {/* Record header */}
                   <div className="flex items-center justify-between p-4 border-b-2 border-black bg-green-50">
-                    <div className="flex items-center gap-2">
-                      <Eye className="w-4 h-4 text-green-700" strokeWidth={2.5} />
-                      <h3 className="text-sm font-black text-black">{record.name}</h3>
+                    <div className="flex items-center gap-2 min-w-0">
+                      <Eye className="w-4 h-4 text-green-700 flex-shrink-0" strokeWidth={2.5} />
+                      <h3 className="text-sm font-black text-black truncate">{record.name}</h3>
                     </div>
-                    <button
-                      onClick={() =>
-                        setViewingRecord(viewingRecord === record.id ? null : record.id)
-                      }
-                      className="px-3 py-1 bg-black text-white text-xs font-black uppercase hover:bg-gray-800 transition-colors"
-                    >
-                      {viewingRecord === record.id ? "Collapse" : "Expand"}
-                    </button>
+                    <div className="flex items-center gap-2 flex-shrink-0 ml-2">
+                      {/* ── USP 3: Time-Bomb Expiry Badge ── */}
+                      <div className="flex items-center gap-1 px-2 py-1 bg-red-500 border-2 border-black text-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                        <Clock className="w-3 h-3" strokeWidth={3} />
+                        <span className="text-[10px] font-black uppercase">23h 59m</span>
+                      </div>
+                      <button
+                        onClick={() =>
+                          setViewingRecord(viewingRecord === record.id ? null : record.id)
+                        }
+                        className="px-3 py-1 bg-black text-white text-xs font-black uppercase hover:bg-gray-800 transition-colors"
+                      >
+                        {viewingRecord === record.id ? "Collapse" : "Expand"}
+                      </button>
+                    </div>
                   </div>
 
+                  {/* Expanded content */}
                   {viewingRecord === record.id && (
                     <div className="p-4">
                       <pre className="record-content">{record.content}</pre>
                     </div>
                   )}
+
+                  {/* ── USP 1: Masumi AI Agent Button ── */}
+                  <div className="px-4 pb-4">
+                    <MasumiAgent recordId={record.id} recordName={record.name} />
+                  </div>
                 </div>
               ))}
             </div>
