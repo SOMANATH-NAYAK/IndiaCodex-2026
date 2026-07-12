@@ -14,7 +14,7 @@ export default function NucastAlert() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-black rounded-sm flex items-center justify-center flex-shrink-0 animate-pulse-slow">
+              <div className="w-10 h-10 bg-black rounded-none flex items-center justify-center flex-shrink-0 animate-pulse-slow">
                 <AlertTriangle className="w-6 h-6 text-yellow-400" strokeWidth={2.5} />
               </div>
               <div>

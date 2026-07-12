@@ -18,6 +18,7 @@ import {
   CheckCheck,
 } from "lucide-react";
 
+
 export default function DoctorDashboard() {
   const {
     records,
@@ -34,10 +35,11 @@ export default function DoctorDashboard() {
     "addr1qx2fxv2umyhttkxyxp8x0dlpdt3k6cwng5pxj3jhsydzer..."
   );
   const [viewingRecord, setViewingRecord] = useState<string | null>(null);
+  const [modalRecordId, setModalRecordId] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
 
   const unlockedRecords = records.filter((r) => !r.locked);
-  const activeRecord = records.find((r) => r.id === viewingRecord);
+  const modalRecord = records.find((r) => r.id === modalRecordId);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -55,7 +57,7 @@ export default function DoctorDashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       {/* ━━━ Header Banner ━━━ */}
       <div className="bg-white border-b-2 border-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -187,7 +189,7 @@ export default function DoctorDashboard() {
                   record={record}
                   variant="doctor"
                   onRequestAccess={() => requestAccess(record.id)}
-                  onViewContent={() => setViewingRecord(record.id)}
+                  onViewContent={() => setModalRecordId(record.id)}
                 />
               ))}
             </div>
@@ -238,26 +240,26 @@ export default function DoctorDashboard() {
         )}
 
         {/* ━━━ Record Detail Modal ━━━ */}
-        {activeRecord && !activeRecord.locked && viewingRecord && (
+        {modalRecord && !modalRecord.locked && modalRecordId && (
           <div className="fixed inset-0 z-[90] flex items-center justify-center p-4 bg-black/50">
             <div className="w-full max-w-2xl bg-white border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-h-[80vh] overflow-auto">
               <div className="flex items-center justify-between p-4 border-b-2 border-black bg-yellow-400">
-                <h3 className="font-black text-black">{activeRecord.name}</h3>
+                <h3 className="font-black text-black">{modalRecord.name}</h3>
                 <button
-                  onClick={() => setViewingRecord(null)}
+                  onClick={() => setModalRecordId(null)}
                   className="w-8 h-8 bg-black text-white flex items-center justify-center hover:bg-gray-800 transition-colors"
                 >
                   <X className="w-4 h-4" strokeWidth={3} />
                 </button>
               </div>
               <div className="p-6">
-                <pre className="record-content">{activeRecord.content}</pre>
+                <pre className="record-content">{modalRecord.content}</pre>
                 <div className="mt-4 flex items-center gap-2 text-xs font-bold text-gray-500">
                   <span className="px-2 py-1 bg-green-100 border border-green-400 text-green-700">
                     ✓ Verified on-chain
                   </span>
                   <span className="px-2 py-1 bg-gray-100 border border-gray-300">
-                    {activeRecord.date}
+                    {modalRecord.date}
                   </span>
                 </div>
               </div>
