@@ -1,7 +1,7 @@
-# 1. Your Project
+# 1. Project
 **MediChain DAO**
 
-# 2. Your Project's Description
+# 2. Project's Description
 MediChain DAO transforms medical records from "dead paper" into "live, smart data." We put the patient at the center of the architecture. Records are encrypted and tied to a decentralized identity (Lace Wallet). Doctors must request access, and patients grant **cryptographic, ephemeral consent** verified on the Cardano blockchain.
 
 **Key Features:**
@@ -10,7 +10,7 @@ MediChain DAO transforms medical records from "dead paper" into "live, smart dat
 - **Selective Disclosure via ZK-Proofs:** Patients can generate Zero-Knowledge Proofs to verify specific health states.
 - **Ephemeral "Time-Bombed" Access:** Consent can be granted for 1h, 24h, or 7d.
 
-# 3. What problem you are trying to solve
+# 3. What problem trying to solve
 Today's healthcare system is fragmented:
 - **Data Silos:** Hospitals cannot easily share data, leading to expensive repeated tests.
 - **Medical Errors:** 1 in 4 patients face medical errors due to incomplete records (WHO).
